@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 李磊建筑 - 企业官网
 
-## Getting Started
+任丘农村自建房 & 装修施工企业官网
 
-First, run the development server:
+[![Deploy to Cloudflare Pages](https://img.shields.io/github/actions/workflow/status/cangming009/house_build_lilei/deploy.yml?logo=github&label=Deploy&style=flat-square)](https://github.com/cangming009/house_build_lilei/actions/workflows/deploy.yml)
+[![Cloudflare Pages](https://img.shields.io/badge/Cloudflare%20Pages-online-ff9800?logo=cloudflare&style=flat-square)](https://house-sister.pages.dev)
+
+## 技术栈
+
+- **框架**: Next.js 16
+- **样式**: Tailwind CSS 4
+- **部署**: Cloudflare Pages（静态导出）
+
+## 本地开发
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 部署
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+推送 `main` 分支自动触发 GitHub Actions 构建并部署到 Cloudflare Pages。
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+手动部署：
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run build
+npx wrangler pages deploy out/ --project-name house-sister --branch main
+```
